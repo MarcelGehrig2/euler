@@ -11,11 +11,33 @@ public class Main {
 		 * By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 		 */
 		
-		// # of attempts:	0
-		// success:			false
+		// # of attempts:	1
+		// success:			true
 		
-//		int sum = 0;
-//		
+		
+		int fib_0 = 0;
+		int fib_1 = 1;	// init
+		int fib_2 = 0;
+		
+		int sumEvenFib = 0;
+		
+		while ((fib_1 + fib_2) < 4e6) {
+			fib_0 = fib_1 + fib_2;	// calculating new value
+			
+//			System.out.print("Fibonacci number = " + fib_0);
+			
+			if ( (fib_0 % 2) == 0 )	sumEvenFib += fib_0; 
+			
+			// shifting Variables
+			fib_2 = fib_1;
+			fib_1 = fib_0;
+			
+//			System.out.println();
+		};
+		
+		System.out.println();
+		System.out.println("The sum of all even Values is: " + sumEvenFib);
+		
 //		for (int i=0; i < 1000; i++) {
 //			System.out.print("i = " + i + ",   ");
 //			if ( (i % 3 == 0) && (i != 0) ) {
