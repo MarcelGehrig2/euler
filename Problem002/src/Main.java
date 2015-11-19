@@ -38,21 +38,6 @@ public class Main {
 		System.out.println();
 		System.out.println("The sum of all even Values is: " + sumEvenFib);
 		
-//		for (int i=0; i < 1000; i++) {
-//			System.out.print("i = " + i + ",   ");
-//			if ( (i % 3 == 0) && (i != 0) ) {
-//				sum += i;
-//				System.out.print(",    sum3 = " + sum);
-//			}
-//			else if ( (i % 5 == 0) && (i != 0) ) {
-//				sum += i;
-//				System.out.print(",    sum5 = " + sum);
-//			}
-//			System.out.println();
-//		}
-//		
-//		System.out.println();
-//		System.out.println("The total sum is: " + sum);
 	}
 
 }
