@@ -1,7 +1,7 @@
 
-public class Main {
+public class Propblem001 {
 
-	public static void main(String[] args) {
+	public void Problem001() {
 		// Multiples of 3 and 5
 		// ////////////////////
 
@@ -12,49 +12,36 @@ public class Main {
 
 		// # of attempts:		3
 		// success:				true
-		// calculating time:	34  usec	(i < 1000)
-		// answer:				233168
+		// calculating time:	35.7usec	(i < 1000)
+		// answer:				
 
-
-		
-		// DEBUG
-		int numbOfExe = 1;
-		int dbg = 1;
-		
-		
-		
-		// CODE
-		
 		long startTime = System.nanoTime();
 		
 		int sum = 0;
 
-		for (long dbgI=0; dbgI < numbOfExe; dbgI++) {
+		for (long dbgI=0; dbgI < 1; dbgI++) {
+			System.out.println(dbgI);
 			sum = 0;
 
 			for (int i=0; i < 1000; i++) {
-//				System.out.print("i = " + i + ",   ");
+				//		System.out.print("i = " + i + ",   ");
 				if ( (i % 3 == 0) && (i != 0) ) {
 					sum += i;
-//					System.out.print(",    sum3 = " + sum);
+					//			System.out.print(",    sum3 = " + sum);
 				}
 				else if ( (i % 5 == 0) && (i != 0) ) {
 					sum += i;
-//					System.out.print(",    sum5 = " + sum);
+					System.out.print(",    sum5 = " + sum);
 				}
-//				System.out.println();
+				//		System.out.println();
 			}
 		}
 
-		
-		
-
-		// RESULTS
 		long stopTime = System.nanoTime();
 
 		System.out.println();
-		System.out.println("The answer is:\t\t" + sum);
-		System.out.println("Calculating time:\t" + ((int)(stopTime-startTime)/(1000*numbOfExe)) + " usec");
-	}
+		System.out.println("The total sum iss: " + sum);
+		System.out.println("Calculating time: " + ((float)(stopTime-startTime)/1000) + "usec");
 
+	}
 }
