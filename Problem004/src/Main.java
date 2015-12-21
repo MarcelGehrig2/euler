@@ -13,7 +13,8 @@ public class Main {
 		
 		// # of attempts:		3
 		// success:				true
-		// calculating time A:	11211 usec
+		// calculating time A:	11'211 usec
+		// calculating time B:	60'000 usec
 		// answer:				906609
 		
 
@@ -34,7 +35,7 @@ public class Main {
 //				System.out.println("n2: " + n2);
 				
 				int product = n1*n2;
-				if (isPalindrome(product)) {
+				if (isPalindromeB(product)) {
 //					largestPalindromIsFound = true;
 					if (largestPalindrom < product) largestPalindrom = product;
 //					break;
@@ -109,27 +110,32 @@ public class Main {
 		int nCopy = n;
 		Boolean isPalindrome = true;
 		String strN = Integer.toString(n);
-		
-		if (strN.charAt(0) != strN.charAt(strN.length()-1)) {
-			isPalindrome = false;
+
+		if (strN.length() >= 2) {
+			if (strN.charAt(0) != strN.charAt(strN.length()-1)) {
+				isPalindrome = false;
+			}
+
+			if (strN.length() >= 4) {
+				strN = strN.substring(1, strN.length()-1);
+			}
+			//		System.out.println("First cut: " + strN);
+
+			if (strN.charAt(0) != strN.charAt(strN.length()-1)) {
+				isPalindrome = false;
+			}
+
+			if (strN.length() >= 4) {
+				strN = strN.substring(1, strN.length()-1);
+			}
+			//		System.out.println("Second cut: " + strN);
+
+			if (strN.charAt(0) != strN.charAt(strN.length()-1)) {
+				isPalindrome = false;
+			}
 		}
 		
-		strN = strN.substring(1, strN.length()-1);
-		System.out.println("First cut: " + strN);
-		
-		if (strN.charAt(0) != strN.charAt(strN.length()-1)) {
-			isPalindrome = false;
-		}
-		
-		strN = strN.substring(1, strN.length()-1);
-		System.out.println("Second cut: " + strN);
-		
-		if (strN.charAt(0) != strN.charAt(strN.length()-1)) {
-			isPalindrome = false;
-		}
-		
-		
-		System.out.println("is palindrome: " + nCopy + "   " + isPalindrome);
+//		System.out.println("is palindrome: " + nCopy + "   " + isPalindrome);
 		return isPalindrome;
 	}
 }
