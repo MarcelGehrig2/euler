@@ -15,6 +15,7 @@ public class Main {
 		// success:				true
 		// calculating time A:	11'211 usec
 		// calculating time B:	60'000 usec
+		// calculating time C:	574 usec
 		// answer:				906609
 		
 
@@ -24,7 +25,6 @@ public class Main {
 		
 		int largestFactor = 999;
 		int largestPalindrom = 0;
-//		Boolean largestPalindromIsFound = false;
 		int n1=0;
 		int n2=0;
 		
@@ -35,32 +35,15 @@ public class Main {
 //				System.out.println("n2: " + n2);
 				
 				int product = n1*n2;
-				if (isPalindromeB(product)) {
-//					largestPalindromIsFound = true;
+				if (product < largestPalindrom) break;
+				if (isPalindromeA(product)) {
 					if (largestPalindrom < product) largestPalindrom = product;
-//					break;
 				}
 			}
-//			if (largestPalindromIsFound) break;
 		}
 		
 		
-		
-//		long inputNumberCopy = inputNumber;
-//		
-//		for (long i=2L; i<= inputNumberCopy; i++) {
-//			if (divideable(inputNumberCopy, i)) {
-//				primeNumbers.add(i);
-//				inputNumberCopy = inputNumberCopy / i;
-//				i=1;
-//			};
-//		}
-//		
-//		
-//		long largestPrime = primeNumbers.get(primeNumbers.size()-1);
-		
-		
-		
+
 		// RESULTS
 		long stopTime = System.nanoTime();
 
@@ -73,34 +56,28 @@ public class Main {
 	}
 
 	
-	public static Boolean isPalindrome(int n) {
+	public static Boolean isPalindromeA(int n) {
 		int nCopy = n;
 		Boolean isPalindrome = true;
-		
-//		if ((n>=100000) && (n<=999999)) {
-			if (n/100000 != n%10) {
-				isPalindrome = false;
-			}
-			n = (n%100000)/10;		// cuts first and last digit
-			
-//			System.out.println("First cut: " + n);
-//		}
-		
-//		if ((n>=100) && (n<=9999)) {
-			if (n/1000 != n%10) {
-				isPalindrome = false;
-			}
-			n = (n%1000)/10;		// cuts first and last digit
 
-//			System.out.println("Second cut: " + n);
-//		}
-		
-//		if ((n>=1) && (n<=99)) {
-			if (n/10 != n%10) {
-				isPalindrome = false;
-			}
-//		}
-		
+		if (n/100000 != n%10) {
+			isPalindrome = false;
+		}
+		n = (n%100000)/10;		// cuts first and last digit
+
+		//			System.out.println("First cut: " + n);
+
+		if (n/1000 != n%10) {
+			isPalindrome = false;
+		}
+		n = (n%1000)/10;		// cuts first and last digit
+
+		//			System.out.println("Second cut: " + n);
+
+		if (n/10 != n%10) {
+			isPalindrome = false;
+		}
+
 //		System.out.println("is palindrome: " + nCopy + "   " + isPalindrome);
 		return isPalindrome;
 	}
@@ -138,4 +115,6 @@ public class Main {
 //		System.out.println("is palindrome: " + nCopy + "   " + isPalindrome);
 		return isPalindrome;
 	}
+
+
 }
